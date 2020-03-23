@@ -23,8 +23,11 @@ namespace Cw3.DAL
                 using (var con = new SqlConnection("Data Source=db-mssql;Initial Catalog=s15508;Integrated Security=True"))
                 using (var com = new SqlCommand())
                 {
+
                     com.Connection = con;
-                    com.CommandText = $"select Student.IndexNumber, Enrollment.IdEnrollment, Studies.IdStudy, Enrollment.Semester, Studies.Name, Enrollment.StartDate from Enrollment join Student on Student.IdEnrollment = Enrollment.IdEnrollment join Studies on Enrollment.IdStudy = Studies.IdStudy where Student.IndexNumber = '{IndexNo}';";
+                    com.CommandText = $"select Student.IndexNumber, Enrollment.IdEnrollment, Studies.IdStudy, Enrollment.Semester, Studies.Name, Enrollment.StartDate from Enrollment join Student on Student.IdEnrollment = Enrollment.IdEnrollment join Studies on Enrollment.IdStudy = Studies.IdStudy where Student.IndexNumber =@id;";
+                    com.Parameters.AddWithValue("id",IndexNo);
+                       //$"IndexNo}';"
 
                     var en = new Enrollment();
                     var study = new Study();
