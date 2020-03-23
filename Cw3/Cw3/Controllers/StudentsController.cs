@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Cw3.DAL;
@@ -18,21 +19,14 @@ namespace Cw3.Controllers
 
 
         [HttpGet]
-        public IActionResult GetStudents(string orderby)
+        public IActionResult GetStudents()
         {
             return Ok(_dbService.GetStudents());
         }
         [HttpGet("{id}")]
-        public IActionResult GetStudents(int id)
+        public IActionResult GetStudents(string id)
         {
-            if (id == 1)
-            {
-                return Ok("Kowalski");
-            }else if (id == 2)
-            {
-                return Ok("Nowak");
-            }
-            return NotFound("Nie znaleziono studenta");
+            return Ok(_dbService.GetEnrollment(id));
         }
 
         [HttpPost]
@@ -49,12 +43,10 @@ namespace Cw3.Controllers
         {
             Student mockStudent = new Student
             {
-                IDStudent = 1,
                 FirstName = "Jan",
                 LastName = "Kowalski",
                 IndexNumber = "s1234"
             };
-            mockStudent.IDStudent = student.IDStudent;
             mockStudent.FirstName = student.FirstName;
             mockStudent.LastName = student.LastName;
             mockStudent.IndexNumber = student.IndexNumber;
