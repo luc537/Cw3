@@ -11,8 +11,9 @@ namespace Cw3.Models
         public string LastName { get; set; }
         public string IndexNumber { get; set; }
         public DateTime BirthDate { get; set; }
-        public int Semester { get; set; }
-        public string StudiesName { get; set; }
+        public int CurrentSemester { get; set; }
+        public string CurrentStudiesName { get; set; }
+        public Enrollment StudEnrollment { get; set; }
 
 
         //override

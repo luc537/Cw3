@@ -22,6 +22,11 @@ namespace Cw3.DAL
             //};
         }
 
+        public Enrollment GetEnrollment(string IndexNo)
+        {
+            throw new NotImplementedException();
+        }
+
         public Student GetStudent(string IndexNo)
         {
             throw new NotImplementedException();
@@ -45,8 +50,8 @@ namespace Cw3.DAL
                     st.FirstName = dr["FirstName"].ToString();
                     st.LastName = dr["LastName"].ToString();
                     st.BirthDate = (DateTime)dr["BirthDate"];
-                    st.Semester = (int)dr["Semester"];
-                    st.StudiesName = dr["Name"].ToString();
+                    //st.Semester = (int)dr["Semester"];
+                    //st.StudiesName = dr["Name"].ToString();
                     _students.Append<Student>(st);
                 }
                 con.Close();

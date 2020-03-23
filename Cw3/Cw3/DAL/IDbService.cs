@@ -9,6 +9,6 @@ namespace Cw3.DAL
     public interface IDbService
     {
         IEnumerable<Student> GetStudents();
-        Student GetStudent(string IndexNo);
+        Enrollment GetEnrollment(string IndexNo);
     }
 }
