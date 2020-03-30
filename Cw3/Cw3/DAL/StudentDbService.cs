@@ -9,14 +9,10 @@ namespace Cw3.DAL
 {
     public class StudentDbService : IDbService
     { 
-
-    
         private static ICollection<Student> _students;
-
         public StudentDbService() {
             _students = new List<Student>();
         }
-
         public Enrollment GetEnrollment(string IndexNo)
         {
             {
@@ -47,9 +43,6 @@ namespace Cw3.DAL
                 }
             }
         }
-
-        
-
         IEnumerable<Student> IDbService.GetStudents()
         {
             _students = new List<Student>();
@@ -59,8 +52,6 @@ namespace Cw3.DAL
                 com.Connection = con;
                 com.CommandText = "select * from Student inner join Enrollment on Student.IdEnrollment = Enrollment.IdEnrollment inner join Studies on Enrollment.IdStudy = Studies.IdStudy;";
                 
-
-
                 con.Open();
                 var dr = com.ExecuteReader();
                 while (dr.Read())
