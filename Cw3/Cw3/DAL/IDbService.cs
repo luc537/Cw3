@@ -8,7 +8,17 @@ namespace Cw3.DAL
 {
     public interface IDbService
     {
+        //StudentsController
         IEnumerable<Student> GetStudents();
         Enrollment GetEnrollment(string IndexNo);
+
+        //Enrollment
+
+        void BeginTran();
+        void Rollback();
+        void Commit();
+
+        //Middleware
+        public bool CheckIndex(string index);
     }
 }

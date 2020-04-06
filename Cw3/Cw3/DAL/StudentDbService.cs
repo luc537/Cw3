@@ -13,6 +13,22 @@ namespace Cw3.DAL
         public StudentDbService() {
             _students = new List<Student>();
         }
+
+        public void BeginTran()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CheckIndex(string index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Commit()
+        {
+            throw new NotImplementedException();
+        }
+
         public Enrollment GetEnrollment(string IndexNo)
         {
             {
@@ -43,6 +59,12 @@ namespace Cw3.DAL
                 }
             }
         }
+
+        public void Rollback()
+        {
+            throw new NotImplementedException();
+        }
+
         IEnumerable<Student> IDbService.GetStudents()
         {
             _students = new List<Student>();

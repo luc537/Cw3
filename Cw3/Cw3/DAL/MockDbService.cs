@@ -22,6 +22,21 @@ namespace Cw3.DAL
             //};
         }
 
+        public void BeginTran()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CheckIndex(string index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Commit()
+        {
+            throw new NotImplementedException();
+        }
+
         public Enrollment GetEnrollment(string IndexNo)
         {
             throw new NotImplementedException();
@@ -57,6 +72,11 @@ namespace Cw3.DAL
                 con.Close();
                 return _students;
             }
+        }
+
+        public void Rollback()
+        {
+            throw new NotImplementedException();
         }
     }
 }
