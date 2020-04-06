@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cw3.DTOs.Requests;
 using Cw3.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +13,15 @@ namespace Cw3.Controllers
     public class EnrollmentsController : ControllerBase
     {
         [HttpPost]
-        public IActionResult EnrollStudent(Student student)
+        public IActionResult EnrollStudent(EnrollStudentRequest request)
         {
             
-            return Ok(student);
+            var st = new Student();
+            st.FirstName = request.FirstName;
+
+
+            var en = new Enrollment();
+            return Ok(en);
         }
     }
 }

@@ -9,9 +9,9 @@ namespace Cw3.Models
     [Serializable]
     public class Study
     {
-        [JsonPropertyName("IdStudy")]
+        //[JsonPropertyName("IdStudy")]
         public int IdStudy { get; set; }
-        [JsonPropertyName("Name")]
+        //[JsonPropertyName("Name")]
         public string Name { get; set; }
     }
 }

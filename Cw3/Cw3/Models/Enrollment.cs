@@ -9,13 +9,13 @@ namespace Cw3.Models
     [Serializable]
     public class Enrollment
     {
-        [JsonPropertyName("IdEnrollment")]
+        //[JsonPropertyName("IdEnrollment")]
         public int IdEnrollment { get; set; }
-        [JsonPropertyName("Semester")]
+        //[JsonPropertyName("Semester")]
         public int Semester { get; set; }
-        [JsonPropertyName("StartDate")]
+        //[JsonPropertyName("StartDate")]
         public DateTime StartDate { get; set; }
-        [JsonPropertyName("study")]
+        //[JsonPropertyName("study")]
         public Study study { get; set; }
     }
 }
